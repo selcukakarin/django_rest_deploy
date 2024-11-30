@@ -85,11 +85,11 @@ WSGI_APPLICATION = "blog.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": os.environ.get("SQL_ENGINE", "django.db.backends.sqlite3"),
-        "NAME": os.environ.get("SQL_DATABASE", BASE_DIR / "db.sqlite3"),
-        "USER": os.environ.get("SQL_USER", "user"),
-        "PASSWORD": os.environ.get("SQL_PASSWORD", "password"),
-        "HOST": os.environ.get("SQL_HOST", "localhost"),
+        "ENGINE": os.environ.get("SQL_ENGINE", "django.db.backends.postgresql"),
+        "NAME": os.environ.get("SQL_DATABASE", "hello_django_prod"),
+        "USER": os.environ.get("SQL_USER", "hello_django"),
+        "PASSWORD": os.environ.get("SQL_PASSWORD", "hello_django"),
+        "HOST": os.environ.get("SQL_HOST", "db"),
         "PORT": os.environ.get("SQL_PORT", "5432")
     }
 }
@@ -157,10 +157,10 @@ REST_FRAMEWORK = {
 # 'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
 # }
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "blog.settings")
+# os.environ.setdefault("DJANGO_SETTINGS_MODULE", "blog.settings")
 
-SECRET_KEY = os.environ.get("SECRET_KEY")
+# SECRET_KEY = os.environ.get("SECRET_KEY")
 
-DEBUG = bool(os.environ.get("DEBUG", default=0))
+# DEBUG = bool(os.environ.get("DEBUG", default=0))
 
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOST").split(" ")
+# ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOST").split(" ")
